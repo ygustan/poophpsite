@@ -1,9 +1,7 @@
 <?php
-
-define("ROOT", __DIR__. "/");
-
 // require_once "produits/Produit.php";
-require ROOT. "Core/Autoload/Autoload.php";
+define("ROOT", dirname(__DIR__). "/");
+require ROOT . "/Core/Autoload/Autoload.php";
 use Classes\Produits\Produit;
 Autoload::register();
 
