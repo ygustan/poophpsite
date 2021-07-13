@@ -2,12 +2,12 @@
 
 class Autoload{
 
-    public static function load($classe){
+    public static function Autoloader($classe){
         $classe = str_replace("\\", "/", $classe);
-        require "$classe.php";
+        require ROOT . "$classe.php";
     }
 
     public static function register(){
-        spl_autoload_register(['load', __CLASS__]);
+        spl_autoload_register(['Autoload', 'Autoloader']);
     }
 }
