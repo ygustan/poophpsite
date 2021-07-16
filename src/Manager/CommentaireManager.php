@@ -1,6 +1,6 @@
 <?php
 namespace App\Manager;
-use vendor\Database\Database;
+use core\Database\Database;
 
 class CommentaireManager{
 

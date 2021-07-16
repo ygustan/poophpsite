@@ -4,7 +4,6 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< HEAD
 class ComposerStaticInite6b4a272a46bb0c6367b74e51ffee281
 {
     public static $prefixLengthsPsr4 = array (
@@ -12,34 +11,28 @@ class ComposerStaticInite6b4a272a46bb0c6367b74e51ffee281
         array (
             'vendor\\' => 7,
         ),
+        'c' => 
+        array (
+            'core\\' => 5,
+        ),
         'A' => 
         array (
             'App\\' => 4,
-=======
-class ComposerStaticInit76bdfc35c7c1100fb4c395058fed1473
-{
-    public static $prefixLengthsPsr4 = array (
-        'B' => 
-        array (
-            'Base\\' => 5,
->>>>>>> c2e9379b6051d923db6cf15a7f258bc379dbc933
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-<<<<<<< HEAD
         'vendor\\' => 
         array (
             0 => 'D:\\wamp64\\www\\poo\\vendor',
         ),
+        'core\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/core',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
-=======
-        'Base\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Classes',
->>>>>>> c2e9379b6051d923db6cf15a7f258bc379dbc933
         ),
     );
 
@@ -50,15 +43,9 @@ class ComposerStaticInit76bdfc35c7c1100fb4c395058fed1473
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInite6b4a272a46bb0c6367b74e51ffee281::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInite6b4a272a46bb0c6367b74e51ffee281::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInite6b4a272a46bb0c6367b74e51ffee281::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInit76bdfc35c7c1100fb4c395058fed1473::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit76bdfc35c7c1100fb4c395058fed1473::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit76bdfc35c7c1100fb4c395058fed1473::$classMap;
->>>>>>> c2e9379b6051d923db6cf15a7f258bc379dbc933
 
         }, null, ClassLoader::class);
     }

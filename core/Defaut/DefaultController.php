@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace core\Defaut;
 
 abstract class DefaultController{
 
@@ -14,13 +14,11 @@ abstract class DefaultController{
 
     public function redirectToRoute($name, $listParams = [])
     {
-        $param = "";
+        $params = "";
 
         foreach($listParams as $key => $value){
-            $param .= "&$key=$value";
+            $params .= "&$key=$value";
         }
-
-
-        header("location: public/index.php?page=$name".$param);
+        header("location: public/index.php?page=$name".$params);
     }
 }

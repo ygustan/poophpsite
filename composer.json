@@ -1,12 +1,9 @@
 {
     "autoload": {
         "psr-4": {
-<<<<<<< HEAD
             "App\\": "src/",
-            "vendor\\": "vendor/"
-=======
-            "Base\\": "Classes/"
->>>>>>> c2e9379b6051d923db6cf15a7f258bc379dbc933
+            "vendor\\": "vendor/",
+            "core\\": "core/"
         }
     }
 }

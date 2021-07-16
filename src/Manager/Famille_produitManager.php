@@ -1,7 +1,7 @@
 <?php
 namespace App\Manager;
-use vendor\Database\Database;
-use App\Manager\DefaultManager;
+use core\Database\Database;
+use core\Defaut\DefaultManager;
 
 class Famille_produitManager implements DefaultManager{
 

@@ -1,5 +1,5 @@
 <?php
-namespace App\Manager;
+namespace core\Defaut;
 
 abstract class DefaultManager{
 

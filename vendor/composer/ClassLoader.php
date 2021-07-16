@@ -42,11 +42,8 @@ namespace Composer\Autoload;
  */
 class ClassLoader
 {
-<<<<<<< HEAD
     private $vendorDir;
 
-=======
->>>>>>> c2e9379b6051d923db6cf15a7f258bc379dbc933
     // PSR-4
     private $prefixLengthsPsr4 = array();
     private $prefixDirsPsr4 = array();
@@ -62,7 +59,6 @@ class ClassLoader
     private $missingClasses = array();
     private $apcuPrefix;
 
-<<<<<<< HEAD
     private static $registeredLoaders = array();
 
     public function __construct($vendorDir = null)
@@ -70,8 +66,6 @@ class ClassLoader
         $this->vendorDir = $vendorDir;
     }
 
-=======
->>>>>>> c2e9379b6051d923db6cf15a7f258bc379dbc933
     public function getPrefixes()
     {
         if (!empty($this->prefixesPsr0)) {
@@ -315,7 +309,6 @@ class ClassLoader
     public function register($prepend = false)
     {
         spl_autoload_register(array($this, 'loadClass'), true, $prepend);
-<<<<<<< HEAD
 
         if (null === $this->vendorDir) {
             return;
@@ -327,8 +320,6 @@ class ClassLoader
             unset(self::$registeredLoaders[$this->vendorDir]);
             self::$registeredLoaders[$this->vendorDir] = $this;
         }
-=======
->>>>>>> c2e9379b6051d923db6cf15a7f258bc379dbc933
     }
 
     /**
@@ -337,24 +328,17 @@ class ClassLoader
     public function unregister()
     {
         spl_autoload_unregister(array($this, 'loadClass'));
-<<<<<<< HEAD
 
         if (null !== $this->vendorDir) {
             unset(self::$registeredLoaders[$this->vendorDir]);
         }
-=======
->>>>>>> c2e9379b6051d923db6cf15a7f258bc379dbc933
     }
 
     /**
      * Loads the given class or interface.
      *
      * @param  string    $class The name of the class
-<<<<<<< HEAD
      * @return true|null True if loaded, null otherwise
-=======
-     * @return bool|null True if loaded, null otherwise
->>>>>>> c2e9379b6051d923db6cf15a7f258bc379dbc933
      */
     public function loadClass($class)
     {
@@ -363,11 +347,8 @@ class ClassLoader
 
             return true;
         }
-<<<<<<< HEAD
 
         return null;
-=======
->>>>>>> c2e9379b6051d923db6cf15a7f258bc379dbc933
     }
 
     /**
@@ -412,7 +393,6 @@ class ClassLoader
         return $file;
     }
 
-<<<<<<< HEAD
     /**
      * Returns the currently registered loaders indexed by their corresponding vendor directories.
      *
@@ -423,8 +403,6 @@ class ClassLoader
         return self::$registeredLoaders;
     }
 
-=======
->>>>>>> c2e9379b6051d923db6cf15a7f258bc379dbc933
     private function findFileWithExtension($class, $ext)
     {
         // PSR-4 lookup

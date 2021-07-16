@@ -1,6 +1,6 @@
 <?php
 namespace App\Entity;
-use App\Entity\DefaultEntity;
+use core\Defaut\DefaultEntity;
 
 class Famille_produit extends DefaultEntity{
 

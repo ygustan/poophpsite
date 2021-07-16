@@ -1,5 +1,5 @@
 <?php
-namespace App\Entity;
+namespace core\Defaut;
 
 class DefaultEntity{
 

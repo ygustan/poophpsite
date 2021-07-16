@@ -1,5 +1,5 @@
 <?php
-namespace vendor\Autoload;
+namespace core\Autoload;
 
 class Autoload {
     public static function autoloader($classe){
