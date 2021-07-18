@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="<?= ROOT. "templates/style.css" ?>">
+
     <style>
 body{
     font-family: Arial;
@@ -83,7 +85,8 @@ body{
     </style>
 </head>
 <body>
-<div id="header">
+
+    <div id="header">
         <p>Hello</p>
     </div>
 
@@ -99,7 +102,12 @@ body{
             <p>Here some information about me</p>
         </div>
         <div class="main">
-            <?= $content ?>
+            <div class="article">
+                <h1>Article</h1>
+                <h2>15 July 2021</h2>
+                <p>Welcome to our home</p>
+                <p>Here the main content about the page and what we offer</p>
+            </div>
         </div>
     </div>
 

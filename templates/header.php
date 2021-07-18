@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Adopt Me</title>
+    <link rel="stylesheet" href="<?= ROOT. "templates/style.css" ?>">
+
     <style>
+        * {
+    box-sizing: border-box;
+}
+
 body{
     font-family: Arial;
     margin: 0;
@@ -80,17 +86,19 @@ body{
     text-align: center;
     background: #ddd;
 }
+
+
     </style>
 </head>
 <body>
-<div id="header">
+    <div id="header">
         <p>Hello</p>
     </div>
 
     <div id="navbar">
-        <a href="#">Home</a>
+        <a href="index.php?method=getArticles">Home</a>
         <a href="#">Adopt Me</a>
-        <a href="#">Product</a>
+        <a href="index.php?method=getProduits">Product</a>
         <a href="#">Abous Us</a>
     </div>
 
@@ -99,14 +107,3 @@ body{
             <p>Here some information about me</p>
         </div>
         <div class="main">
-            <?= $content ?>
-        </div>
-    </div>
-
-
-    <div class="footer">
-        <h2>Footer</h2>
-    </div>
-
-</body>
-</html>

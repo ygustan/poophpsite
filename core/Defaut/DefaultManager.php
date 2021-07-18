@@ -1,7 +1,8 @@
 <?php
 namespace core\Defaut;
+use core\Interfaces\InterfaceManager;
 
-abstract class DefaultManager{
+abstract class DefaultManager implements InterfaceManager{
 
     public function render($path, $attributes = [])
     {

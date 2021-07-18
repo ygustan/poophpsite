@@ -7,9 +7,10 @@ abstract class DefaultController{
     {
         ob_start();
         extract($attributes);
+        $content = ob_end_flush();
         include ROOT . "templates/$path.php";
-        $content = ob_get_clean();
-        include ROOT . "templates/base.php";
+        // include ROOT . "templates/base.php";
+        
     }
 
     public function redirectToRoute($name, $listParams = [])

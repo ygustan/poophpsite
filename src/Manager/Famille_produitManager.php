@@ -3,7 +3,7 @@ namespace App\Manager;
 use core\Database\Database;
 use core\Defaut\DefaultManager;
 
-class Famille_produitManager implements DefaultManager{
+class Famille_produitManager extends DefaultManager{
 
     private $classe = "Famille_produit";
 
@@ -11,7 +11,7 @@ class Famille_produitManager implements DefaultManager{
         $this->db = new Database();
     }
 
-    public function getFamilleProduits(){
+    public function getAll(){
         $results = $this->db->getData("SELECT * FROM Famille_produit", $this->classe);
 
         $content = "<ul>";
@@ -23,7 +23,7 @@ class Famille_produitManager implements DefaultManager{
         return $content;
     }
 
-    public function getFamilleProduit(int $id){
+    public function get(int $id){
         $results = $this->db->getData("SELECT * FROM Famille_produit WHERE Id_familleproduit = $id", $this->classe, true);
 
         $content = "<ul>";
@@ -33,7 +33,15 @@ class Famille_produitManager implements DefaultManager{
         return $content;
     }
 
-    public function deleteFamilleProduit(int $id){
+    public function save(){
+
+    }
+
+    public function update(int $id){
+
+    }
+
+    public function delete(int $id){
         $result = $this->db->prepareData("DELETE FROM Famille_produit WHERE Id_familleproduit = $id");
 
         return $result;
