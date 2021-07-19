@@ -108,6 +108,7 @@ footer {
         <a href="index.php?method=getArticles">Blog</a>
         <a href="index.php?method=getAnimaux">Adopt Me</a>
         <a href="index.php?method=getProduits">Product</a>
+        <a href="index.php?method=register">Inscription</a>
         <a href="index.php?method=dons">Abous Us</a>
     </div>
 

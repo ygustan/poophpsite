@@ -5,6 +5,7 @@ use App\Controller\ProduitController;
 use App\Controller\DonsController;
 use App\Controller\HomeController;
 use App\Controller\AnimauxController;
+use App\Controller\UserController;
 use App\Controller\LoginController;
 
 if(!empty($_GET) && isset($_GET["method"])){
@@ -50,6 +51,9 @@ if(!empty($_GET) && isset($_GET["method"])){
     } else if ($_GET["method"] === "deleteAnimal" && isset($_GET["id"])) {
         $controller = new AnimauxController;
         $controller->delete($_GET["id"]);
+    } else if ($_GET["method"] === "register") {
+        $controller = new UserController;
+        $controller->register($_POST);
     } else if ($_GET["method"] === "login") {
         $controller = new LoginController;
         $controller->login($_POST);
