@@ -20,6 +20,6 @@ abstract class DefaultController{
         foreach($listParams as $key => $value){
             $params .= "&$key=$value";
         }
-        header("location: public/index.php?page=$name".$params);
+        header("location: index.php?method=$name".$params);
     }
 }

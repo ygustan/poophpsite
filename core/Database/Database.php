@@ -47,11 +47,11 @@ class Database {
         return $data;
     }
 
-    public function prepareData(string $statement){
+    public function prepareData(string $statement, array $data= array()){
         try {
             $prepare = $this->pdo->prepare($statement);
 
-            return $prepare->execute();
+            return $prepare->execute($data);
         } catch (\PDOException $e) {
             return $e->getMessage();
         }

@@ -20,6 +20,11 @@ class DefaultModel{
 
     public function findById($id){
         $statement = "SELECT * FROM $this->table WHERE $this->idName = $id";
-        return $this->db->getData($statement, $this->className);
+        return $this->db->getData($statement, $this->className, true);
+    }
+
+    public function deleteById($id){
+        $statement = "DELETE FROM $this->table WHERE $this->idName = $id";
+        return $this->db->prepareData($statement);
     }
 }

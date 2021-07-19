@@ -99,7 +99,7 @@ body{
         <a href="index.php?method=getArticles">Home</a>
         <a href="#">Adopt Me</a>
         <a href="index.php?method=getProduits">Product</a>
-        <a href="#">Abous Us</a>
+        <a href="index.php?method=dons">Abous Us</a>
     </div>
 
     <div class="row">
