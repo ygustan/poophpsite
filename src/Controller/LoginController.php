@@ -23,7 +23,8 @@ class LoginController extends DefaultController{
             $prep = $this->db->getPDO()->prepare($statement);
             $prep->bindValue(':Email', $user->getNomProduit());
             $prep->bindValue(':Motdepasse', $user->getQuantiteProduit());
-            $valide = $prep->execute();
+            $prep->execute();
+            $valide = $prep->fetch();
 
             if($valide){
                 session_start();
@@ -32,7 +33,8 @@ class LoginController extends DefaultController{
                 $statement = "SELECT * FROM utilisateur WHERE Email = :Email AND Est_admin = 1";
                 $prep = $this->db->getPDO()->prepare($statement);
                 $prep->bindValue(':Email', $user->getQuantiteProduit());
-                $valideAdmin = $prep->execute();
+                $prep->execute();
+                $valideAdmin = $prep->fetch();
 
                 if($valideAdmin){
                     $_SESSION['admin'] = true;
