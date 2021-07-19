@@ -24,7 +24,7 @@ class User extends DefaultEntity{
     /**
      * Get the value of Nom
      */
-    public function getNom()
+    public function getName()
     {
         return $this->Nom;
     }
