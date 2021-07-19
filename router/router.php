@@ -5,6 +5,7 @@ use App\Controller\ProduitController;
 use App\Controller\DonsController;
 use App\Controller\HomeController;
 use App\Controller\AnimauxController;
+use App\Controller\UserController;
 
 if(!empty($_GET) && isset($_GET["method"])){
     if($_GET["method"] === "getArticles"){
@@ -46,10 +47,12 @@ if(!empty($_GET) && isset($_GET["method"])){
     } else if ($_GET["method"] === "AdoptAnimal" && isset($_GET["id"])) {
         $controller = new AnimauxController;
         $controller->adopt($_GET["id"]);
-    } 
-    else if ($_GET["method"] === "deleteAnimal" && isset($_GET["id"])) {
+    } else if ($_GET["method"] === "deleteAnimal" && isset($_GET["id"])) {
         $controller = new AnimauxController;
         $controller->delete($_GET["id"]);
+    } else if ($_GET["method"] === "register") {
+        $controller = new UserController;
+        $controller->register($_POST);
     } 
 }else {
     $controller = new HomeController();
