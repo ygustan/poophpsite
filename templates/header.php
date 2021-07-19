@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -108,19 +111,29 @@ footer {
         <a href="index.php?method=getArticles">Blog</a>
         <a href="index.php?method=getAnimaux">Adopt Me</a>
         <a href="index.php?method=getProduits">Product</a>
-        <a href="index.php?method=register">Inscription</a>
         <a href="index.php?method=dons">Abous Us</a>
     </div>
 
     <div class="row">
         <div class="sidebar">
-            <a href="index.php?method=login">Login</a>
+            <?php if (isset($_SESSION["email"])):?>
+                <a href="index.php?method=deconnexion">Deconnexion</a>
+            <?php else:?>
+                <a href="index.php?method=login">Login</a>
+                </br>
+                <a href="index.php?method=register">Inscription</a>
+            <?php endif; ?>
+         
+
             <!--<a href="#">Panier</a>-->
-            <h4>Admin</h4>
-            <a href="index.php?method=createAnimal">Add animal</a>
-            </br>
-            <a href="index.php?method=createProduit">Create product</a>
-            </br>
-            <a href="index.php?method=donsAdmin">Listes des dons</a>
+            <?php if (isset($_SESSION["admin"])):?>
+                <h4>Admin</h4>
+                <a href="index.php?method=createAnimal">Add animal</a>
+                </br>
+                <a href="index.php?method=createProduit">Create product</a>
+                </br>
+                <a href="index.php?method=donsAdmin">Listes des dons</a>
+            <?php endif; ?>
         </div>
+
         <div class="main">
