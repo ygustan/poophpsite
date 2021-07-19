@@ -113,7 +113,7 @@ footer {
 
     <div class="row">
         <div class="sidebar">
-            <p></p>
+            <a href="index.php?method=login">Login</a>
             <a href="#">Panier</a>
             <h4>Admin</h4>
             <a href="index.php?method=createAnimal">Add animal</a>
