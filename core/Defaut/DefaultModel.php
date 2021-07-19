@@ -2,8 +2,10 @@
 namespace core\Defaut;
 
 use core\Database\Database;
+use core\Interfaces\InterfaceModel;
 
-class DefaultModel{
+class DefaultModel implements InterfaceModel{
+    
     protected $table;
     protected $idName = "";
     protected $className = "";

@@ -11,12 +11,37 @@ require_once ROOT. "templates/header.php";
 <p><?= $produit->getDescriptionProduit() ?></p>
 
 <h2>Ajouter au panier</h2>
-<form method="GET">
-        <label for="QuantiteProduit">Quantité
-            <input type="number" name="QuantiteProduit" id="QuantiteProduit">
-        </label>
-    <input type="submit" value="Ajouter">
-</form>
+<label for="QuantiteProduit">Quantité
+    <input type="number" name="QuantiteProduit" id="QuantiteProduit">
+</label>
+<button onclick="panier(<?= $produit->getIdProduit() ?>)">Ajouter</button>
+
+
+<script>
+    function panier($id){
+        var produit = $id;
+        var qte = document.getElementById("QuantiteProduit").value;
+
+        if(qte == ""){
+            qte = 1;
+        }
+        console.log(produit);
+        console.log(qte);
+
+        const params = new URLSearchParams({
+            produit: produit,
+            quantite: qte
+        });
+
+        var url = window.location.origin;
+        url += "/test/public/index.php?";
+        url += params.toString();
+        console.log(url);
+
+        
+    }
+</script>
+
 
 <?php
 require_once ROOT. "templates/footer.php";
