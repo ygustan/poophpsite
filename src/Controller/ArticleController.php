@@ -4,6 +4,9 @@ use core\Defaut\DefaultController;
 use App\Entity\Article;
 use App\Model\ArticleModel;
 
+use App\Model\AnimauxModel;
+use App\Entity\Animaux;
+
 
 class ArticleController extends DefaultController{
 
@@ -12,8 +15,12 @@ class ArticleController extends DefaultController{
         $model = new ArticleModel();
         $articles = $model->findAll();
 
+        $model_aninaux = new AnimauxModel;
+        $animaux = $model_aninaux->findAll();
+
         $this->render("article/index", [
-            "articles" => $articles
+            "articles" => $articles,
+            "animaux" => $animaux
         ]);
     }
 

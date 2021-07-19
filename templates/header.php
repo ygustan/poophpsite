@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adopt Me</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
+                integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
     <link rel="stylesheet" href="<?= ROOT. "templates/style.css" ?>">
 
     <style>
@@ -21,7 +23,11 @@ body{
 #header{
     display: flex;
     background-color: rgb(0, 183, 255);
-    padding-bottom: 50px;
+}
+
+#header>h1{
+    padding-top:2%;
+    padding-left: 15px
 }
 
 #navbar{
@@ -75,16 +81,18 @@ body{
     padding: 20px;
 }
 
-.article{
+.article, .animaux{
     border-style: solid;
     border-color: black;
     border-radius: 2px;
+    margin-bottom: 5px;
 }
 
-.footer {
+footer {
     padding: 20px;
     text-align: center;
     background: #ddd;
+    margin: 0 auto;
 }
 
 
@@ -92,12 +100,13 @@ body{
 </head>
 <body>
     <div id="header">
+        <img src="https://fakeimg.pl/150x100" alt=""><h1>Adopt a pet</h1>
     </div>
 
     <div id="navbar">
         <a href="index.php">Home</a>
         <a href="index.php?method=getArticles">Blog</a>
-        <a href="#">Adopt Me</a>
+        <a href="index.php?method=getAnimaux">Adopt Me</a>
         <a href="index.php?method=getProduits">Product</a>
         <a href="index.php?method=dons">Abous Us</a>
     </div>
