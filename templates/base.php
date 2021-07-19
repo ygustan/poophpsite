@@ -69,7 +69,7 @@ body{
     padding: 20px;
 }
 
-.article{
+.article, .animaux{
     border-style: solid;
     border-color: black;
     border-radius: 2px;

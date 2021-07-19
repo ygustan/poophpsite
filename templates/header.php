@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adopt Me</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
+                integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
     <link rel="stylesheet" href="<?= ROOT. "templates/style.css" ?>">
 
     <style>
@@ -75,10 +77,11 @@ body{
     padding: 20px;
 }
 
-.article{
+.article, .animaux{
     border-style: solid;
     border-color: black;
     border-radius: 2px;
+    margin-bottom: 5px;
 }
 
 .footer {
@@ -97,7 +100,7 @@ body{
 
     <div id="navbar">
         <a href="index.php?method=getArticles">Home</a>
-        <a href="#">Adopt Me</a>
+        <a href="index.php?method=getAnimaux">Adopt Me</a>
         <a href="index.php?method=getProduits">Product</a>
         <a href="index.php?method=dons">Abous Us</a>
     </div>
