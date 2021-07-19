@@ -7,6 +7,7 @@ class Database {
     private $dbname;
     private $user;
     private $pwd;
+    private $port;
     private $pdo;
 
 
@@ -14,7 +15,7 @@ class Database {
 
         try {
             $this->getConfig();
-            $this->pdo = new \PDO("mysql:host=$this->host;dbname=$this->dbname;port=3308", $this->user, $this->pwd, [
+            $this->pdo = new \PDO("mysql:host=$this->host;dbname=$this->dbname;port=$this->port", $this->user, $this->pwd, [
                 \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
             ]);
         } catch (\PDOException $e) {
