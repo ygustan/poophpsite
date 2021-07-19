@@ -1,112 +1,28 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-body{
-    font-family: Arial;
-    margin: 0;
-}
+<?php
+require_once ROOT. "templates/header.php";
+?>
 
+<h2>Les produits</h2>
+<?php foreach( $results as $result): ?>
+<div class="article">
+    <h2><a href="index.php?method=getProduit&id=<?= $result->getIdProduit() ?>"><?= $result->getNomProduit() ?></a></h2>
+    <h2><?= $result->getMarqueProduit() ?></h2>
+    <p><?= $result->getDescriptionProduit() ?></p>
+    <p><?= $result->getOrigineProduit() ?></p>
+</div>
+<?php endforeach ?>
 
-#header{
-    display: flex;
-    background-color: rgb(0, 183, 255);
-    padding-bottom: 50px;
-}
-
-#navbar{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    /*border: 1px solid red;*/
-    background-color: #333;
-}
-
-@media (max-width: 800px) {
-    #navbar {
-        justify-content: space-around;
-    }
-  }
-
-@media (max-width: 500px) {
-    #navbar {
-        flex-direction: column;
-    }
-}
-
-#navbar a{
-    color: white;
-    /*border: solid black 1px;*/
-    padding: 14px 20px;
-    text-decoration: none;
-    text-align: center;
-}
-
-#navbar a:hover{
-    color: black;
-    background-color: white;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.sidebar{
-    flex: 20%;
-    background-color: rgb(223, 223, 223);
-    padding: 20px;
-}
-
-.main{
-    flex: 80%;
-    background-color: white;
-    padding: 20px;
-}
-
-.article{
-    border-style: solid;
-    border-color: black;
-    border-radius: 2px;
-}
-
-.footer {
-    padding: 20px;
-    text-align: center;
-    background: #ddd;
-}
-    </style>
-</head>
-<body>
-<div id="header">
-        <p>Hello</p>
-    </div>
-
-    <div id="navbar">
-        <a href="#">Home</a>
-        <a href="#">Adopt Me</a>
-        <a href="#">Product</a>
-        <a href="#">Abous Us</a>
-    </div>
-
-    <div class="row">
-        <div class="sidebar">
-            <p>Here some information about me</p>
-        </div>
-        <div class="main">
-            <?= $content ?>
-        </div>
-    </div>
-
-
-    <div class="footer">
-        <h2>Footer</h2>
-    </div>
-
-</body>
-</html>
+<!--
+<h2>Les animaux</h2>
+<?php foreach( $animaux as $animal): ?>
+<div class="article">
+    <h2><a href="index.php?method=getProduit&id=<?= $animal->getIdProduit() ?>"><?= $animal->getNomProduit() ?></a></h2>
+    <h2><?= $animal->getMarqueProduit() ?></h2>
+    <p><?= $animal->getDescriptionProduit() ?></p>
+    <p><?= $animal->getOrigineProduit() ?></p>
+</div>
+<?php endforeach ?>
+-->
+<?php
+require_once ROOT. "templates/footer.php";
+?>

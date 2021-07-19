@@ -45,9 +45,9 @@ class ProduitController extends DefaultController{
     {
         if (!empty($data)) {
 
-            var_dump($data);
+            // var_dump($data);
             $produit = new Produit($data);
-            var_dump($produit);
+            // var_dump($produit);
             $today = date("Y-m-d H:i:s");     
             $produit->setIdUtilisateur(1);
             $produit->setDatePublier($today);
@@ -75,6 +75,50 @@ class ProduitController extends DefaultController{
             $familleModel = new Famille_produitModel();
             $familles = $familleModel->findAll();
             $this->render("produit/create", [
+                "familles" => $familles
+            ]);
+        }
+    }
+
+    public function update($id, $data)
+    {
+        if (!empty($data)) {
+
+            var_dump($data);
+            $produit = new Produit($data);
+            var_dump($produit);
+            
+            $statement = "UPDATE Produit SET Nom_produit = :Nom_produit, Quantite_produit = :Quantite_produit, 
+            Poids_produit = :Poids_produit, Type_produit = :Type_produit, Prix_produit = :Prix_produit,
+            Description_produit = :Description_produit, Marque_produit = :Marque_produit,
+            Origine_produit = :Origine_produit, Id_familleproduit = :Id_familleproduit WHERE Id_produit = :Id_produit";
+            
+            $prep = $this->db->getPDO()->prepare($statement);
+            $prep->bindValue(':Nom_produit', $produit->getNomProduit());
+            $prep->bindValue(':Quantite_produit', $produit->getQuantiteProduit());
+            $prep->bindValue(':Poids_produit', $produit->getPoidsProduit());
+            $prep->bindValue(':Type_produit', $produit->getTypeProduit());
+            $prep->bindValue(':Prix_produit', $produit->getPrixProduit());
+            $prep->bindValue(':Description_produit', $produit->getDescriptionProduit());
+            $prep->bindValue(':Marque_produit', $produit->getMarqueProduit());
+            $prep->bindValue(':Origine_produit', $produit->getOrigineProduit());
+            // $prep->bindValue(':Date_publier', $produit->getDatePublier());
+            $prep->bindValue(':Id_familleproduit', $produit->getIdFamilleproduit());
+            $prep->bindValue(':Id_produit', $id);
+            
+            $prep->execute();
+            
+            return $this->redirectToRoute("getProduits");
+        } else {
+
+            $familleModel = new Famille_produitModel();
+            $familles = $familleModel->findAll();
+
+            $model = new ProduitModel();
+            $produit = $model->findById($id);
+
+            $this->render("produit/update", [
+                "produit" => $produit,
                 "familles" => $familles
             ]);
         }

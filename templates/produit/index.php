@@ -8,6 +8,7 @@ require_once ROOT. "templates/header.php";
     <h2><?= $produit->getMarqueProduit() ?></h2>
     <p><?= $produit->getDescriptionProduit() ?></p>
     <p><?= $produit->getOrigineProduit() ?></p>
+    <button><a href="index.php?method=updateProduit&id=<?= $produit->getIdProduit() ?>">Update</a></button>
     <button><a href="index.php?method=deleteProduit&id=<?= $produit->getIdProduit() ?>">Delete</a></button>
 </div>
 <?php endforeach ?>

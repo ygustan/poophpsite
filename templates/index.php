@@ -18,6 +18,8 @@ body{
     display: flex;
     background-color: rgb(0, 183, 255);
     padding-bottom: 50px;
+    text-align: center;
+    
 }
 
 #navbar{

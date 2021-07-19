@@ -92,11 +92,11 @@ body{
 </head>
 <body>
     <div id="header">
-        <p>Hello</p>
     </div>
 
     <div id="navbar">
-        <a href="index.php?method=getArticles">Home</a>
+        <a href="index.php">Home</a>
+        <a href="index.php?method=getArticles">Blog</a>
         <a href="#">Adopt Me</a>
         <a href="index.php?method=getProduits">Product</a>
         <a href="index.php?method=dons">Abous Us</a>
@@ -104,6 +104,15 @@ body{
 
     <div class="row">
         <div class="sidebar">
-            <p>Here some information about me</p>
+            <p></p>
+            <a href="#">Panier</a>
+            <h4>Admin</h4>
+            <a href="index.php?method=getArticles">Home</a>
+            </br>
+            <a href="#">Add animal</a>
+            </br>
+            <a href="index.php?method=createProduit">Create product</a>
+            </br>
+            <a href="index.php?method=donsAdmin">Listes des dons</a>
         </div>
         <div class="main">

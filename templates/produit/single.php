@@ -10,6 +10,14 @@ require_once ROOT. "templates/header.php";
 <h4>Origine :<?= $produit->getOrigineProduit() ?></h4>
 <p><?= $produit->getDescriptionProduit() ?></p>
 
+<h2>Ajouter au panier</h2>
+<form method="GET">
+        <label for="QuantiteProduit">Quantité
+            <input type="number" name="QuantiteProduit" id="QuantiteProduit">
+        </label>
+    <input type="submit" value="Ajouter">
+</form>
+
 <?php
 require_once ROOT. "templates/footer.php";
 ?>
