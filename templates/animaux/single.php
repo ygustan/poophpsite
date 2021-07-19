@@ -14,7 +14,8 @@ require_once ROOT. "templates/header.php";
 <?php if ($animal->getAdopter()):?>
     <p> Date d'adoption : <?= $animal->getDate_adoption() ?></p>
 <?php else:?>
-    <a href="/public/index.php?method=setAdopt">Adopter</a>
+    <a href="index.php?method=AdoptAnimal&id=<?= $animal->getId_animal() ?>">Adopter</a><br/>
+    <a href="index.php?method=deleteAnimal&id=<?= $animal->getId_animal() ?>">Supprimer</a>
 <?php endif; ?>
 
 <?php

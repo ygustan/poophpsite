@@ -44,6 +44,40 @@ class AnimauxController extends DefaultController {
         ]);
     }
 
+    public function delete($id)
+    {
+        $model = new AnimauxModel();
+        $produit = $model->deleteById($id);
+
+        return $this->redirectToRoute("getAnimaux");
+    }
+
+    public function adopt($id)
+    {
+        $model = new AnimauxModel;
+        $animal = $model->findById($id);
+
+        
+
+        var_dump($animal);
+        echo $animal->getId_animal();
+        
+        $today = date("Y-m-d H:i:s");    
+        $animal->setAdopter($today);
+        
+        $statement = "UPDATE animaux SET Adopter = :Adopter, Date_adoption = :Date_adoption
+        WHERE Id_animal = :Id_animal";
+
+        $prep = $this->db->getPDO()->prepare($statement);
+        $prep->bindValue(':Id_animal', $animal->getId_animal());
+        $prep->bindValue(':Date_adoption', $animal->getAdopter());
+        $prep->bindValue(':Adopter', true);
+
+        $prep->execute();
+        
+        return $this->redirectToRoute("getAnimaux");
+    }
+
     public function create($data)
     {
         if (!empty($data)) {

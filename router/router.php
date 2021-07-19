@@ -39,5 +39,12 @@ if(!empty($_GET) && isset($_GET["method"])){
     } else if ($_GET["method"] === "createAnimal") {
         $controller = new AnimauxController;
         $controller->create($_POST);
+    } else if ($_GET["method"] === "AdoptAnimal" && isset($_GET["id"])) {
+        $controller = new AnimauxController;
+        $controller->adopt($_GET["id"]);
+    } 
+    else if ($_GET["method"] === "deleteAnimal" && isset($_GET["id"])) {
+        $controller = new AnimauxController;
+        $controller->delete($_GET["id"]);
     } 
 }
