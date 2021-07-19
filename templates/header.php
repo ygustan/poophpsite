@@ -23,7 +23,11 @@ body{
 #header{
     display: flex;
     background-color: rgb(0, 183, 255);
-    padding-bottom: 50px;
+}
+
+#header>h1{
+    padding-top:2%;
+    padding-left: 15px
 }
 
 #navbar{
@@ -84,10 +88,11 @@ body{
     margin-bottom: 5px;
 }
 
-.footer {
+footer {
     padding: 20px;
     text-align: center;
     background: #ddd;
+    margin: 0 auto;
 }
 
 
@@ -95,7 +100,7 @@ body{
 </head>
 <body>
     <div id="header">
-        <p>Hello</p>
+    <img src="https://fakeimg.pl/150x100" alt=""><h1>Adopt a pet</h1>
     </div>
 
     <div id="navbar">

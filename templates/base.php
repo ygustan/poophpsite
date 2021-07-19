@@ -75,10 +75,11 @@ body{
     border-radius: 2px;
 }
 
-.footer {
+footer {
     padding: 20px;
     text-align: center;
     background: #ddd;
+    margin: 0 auto;
 }
     </style>
 </head>
