@@ -11,17 +11,6 @@ require_once ROOT. "templates/header.php";
 </div>
 <?php endforeach ?>
 
-<h1>Animaux à adopter :</h1>
-<?php foreach( $animaux as $animal):?>
-
-    <?php if (!$animal->getAdopter()):?>
-        <div class="animaux">
-            <h2><a href="index.php?method=getAnimal&id=<?= $animal->getId_animal() ?>"><?= $animal->getNomAnimal() ?></a></h2>
-            <h3><?= $animal->getDescription_animal() ?></h3>
-        </div>
-    <?php endif; ?>
-
-<?php endforeach ?>
 
 
 <?php

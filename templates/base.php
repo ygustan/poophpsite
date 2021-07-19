@@ -12,17 +12,17 @@ require_once ROOT. "templates/header.php";
 </div>
 <?php endforeach ?>
 
-<!--
-<h2>Les animaux</h2>
-<?php foreach( $animaux as $animal): ?>
-<div class="article">
-    <h2><a href="index.php?method=getProduit&id=<?= $animal->getIdProduit() ?>"><?= $animal->getNomProduit() ?></a></h2>
-    <h2><?= $animal->getMarqueProduit() ?></h2>
-    <p><?= $animal->getDescriptionProduit() ?></p>
-    <p><?= $animal->getOrigineProduit() ?></p>
-</div>
+<h2>Animaux à adopter :</h2>
+<?php foreach( $animaux as $animal):?>
+
+    <?php if (!$animal->getAdopter()):?>
+        <div class="animaux">
+            <h2><a href="index.php?method=getAnimal&id=<?= $animal->getId_animal() ?>"><?= $animal->getNomAnimal() ?></a></h2>
+            <h3><?= $animal->getDescription_animal() ?></h3>
+        </div>
+    <?php endif; ?>
+
 <?php endforeach ?>
--->
 <?php
 require_once ROOT. "templates/footer.php";
 ?>

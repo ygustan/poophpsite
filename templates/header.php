@@ -116,9 +116,7 @@ footer {
             <p></p>
             <a href="#">Panier</a>
             <h4>Admin</h4>
-            <a href="index.php?method=getArticles">Home</a>
-            </br>
-            <a href="#">Add animal</a>
+            <a href="index.php?method=createAnimal">Add animal</a>
             </br>
             <a href="index.php?method=createProduit">Create product</a>
             </br>

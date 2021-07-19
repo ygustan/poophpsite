@@ -3,6 +3,12 @@ namespace App\Controller;
 use core\Defaut\DefaultController;
 use core\Database\Database;
 
+
+
+use App\Model\AnimauxModel;
+use App\Entity\Animaux;
+
+
 class HomeController extends DefaultController{
 
     public function __construct(){
@@ -15,11 +21,11 @@ class HomeController extends DefaultController{
         // $prep = $this->db->getPDO()->prepare($statement);
 
         $results = $this->db->getData("SELECT * FROM Produit ORDER BY Id_produit DESC limit 5", "Produit");
-        // $animaux = $this->db->getData("SELECT * FROM Animaux ORDER BY Id_animaux DESC limit 5", "Animaux");
+        $animaux = $this->db->getData("SELECT * FROM Animaux ORDER BY Id_animal DESC limit 5", "Animaux");
 
         $this->render("base", [
             "results" => $results,
-            // "animaux" => $animaux
+            "animaux" => $animaux
         ]);
     }
 }
