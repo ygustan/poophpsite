@@ -2,8 +2,8 @@
 namespace App\Controller;
 use core\Defaut\DefaultController;
 use core\Database\Database;
-use App\Entity\Utilisateur;
-use App\Model\Utilisateur;
+use App\Entity\User;
+use App\Model\UserModel;
 
 class LoginController extends DefaultController{
 
@@ -14,25 +14,23 @@ class LoginController extends DefaultController{
     public function login($data)
     {
         if(!empty($data)){
-            var_dump($data);
-
-            $user = new Utilisateur($data);
+            $user = new User($data);
 
             $statement = "SELECT * FROM Utilisateur WHERE Email = :Email AND Motdepasse = :Motdepasse";
             
             $prep = $this->db->getPDO()->prepare($statement);
-            $prep->bindValue(':Email', $user->getNomProduit());
-            $prep->bindValue(':Motdepasse', $user->getQuantiteProduit());
+            $prep->bindValue(':Email', $user->getEmail());
+            $prep->bindValue(':Motdepasse', $user->getMotdepasse());
             $prep->execute();
             $valide = $prep->fetch();
 
             if($valide){
                 session_start();
-                $_SESSION['username'] = $user->getNomProduit();
+                $_SESSION['email'] = $user->getEmail();
 
                 $statement = "SELECT * FROM utilisateur WHERE Email = :Email AND Est_admin = 1";
                 $prep = $this->db->getPDO()->prepare($statement);
-                $prep->bindValue(':Email', $user->getQuantiteProduit());
+                $prep->bindValue(':Email', $user->getEmail());
                 $prep->execute();
                 $valideAdmin = $prep->fetch();
 
@@ -40,7 +38,7 @@ class LoginController extends DefaultController{
                     $_SESSION['admin'] = true;
                 }
 
-                return $this->redirectToRoute("index");
+                return $this->redirectToRoute("getArticles");
             }else {
                 return $this->redirectToRoute("login");
             }
